@@ -1,0 +1,35 @@
+workstation:
+  name: jeremy-dev-ws
+  owner: "jeremy.dev@noaa.gov"
+  division: "NEFSC / Resource Assessment & Conservation Engineering"
+  purpose: "Geospatial species distribution modeling and Deep Learning / Computer Vision pipelines."
+
+gcp_configuration:
+  project_id: ggn-nmfs-osi-dev-1
+  region: us-central1
+  cluster: workstation-cluster-1
+  config_name: nmfs-base-image-xlarge-gpu-base-image
+
+hardware_specs:
+  machine_type: n1-standard-8
+  cpu_cores: 8
+  ram_gb: 32
+  gpu:
+    type: nvidia-tesla-t4
+    count: 1
+  boot_disk:
+    type: pd-ssd
+    size_gb: 200
+
+software_environment:
+  python_version: "3.11"
+  r_version: "4.3"
+  cuda_version: "12.1"
+  key_libraries:
+    python: ["torch", "torchvision", "geopandas", "rasterio", "xarray"]
+    r: ["sf", "terra", "gstat", "tidyverse", "rstan"]
+
+data_inputs_outputs:
+  gcs_buckets:
+    input_data: "gs://nefsc-spatial-data-dev/raw/"
+    output_data: "gs://nefsc-spatial-data-dev/models/"
