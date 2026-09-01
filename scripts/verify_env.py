@@ -5,8 +5,6 @@ import subprocess
 def test_python_env():
     print("[+] Checking Python environment...")
     import torch
-    import geopandas
-    import rasterio
     
     cuda_available = torch.cuda.is_available()
     print(f"    - PyTorch version: {torch.__version__}")
