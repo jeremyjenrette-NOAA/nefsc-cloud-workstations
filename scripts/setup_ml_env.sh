@@ -8,6 +8,6 @@ pip install scikit-learn pandas numpy matplotlib
 
 echo "=== Installing R & Geospatial Dependencies ==="
 sudo apt-get update && sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev libudunits2-dev
-R -e "install.packages(c('tidyverse', 'devtools'), repos='https://cloud.r-project.org/')"
+R -e "install.packages(c('tidyverse'), repos='https://cloud.r-project.org/')"
 
 echo "=== Setup Complete ==="
